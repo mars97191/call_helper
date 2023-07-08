@@ -22,15 +22,18 @@ INSTALLED_APPS = [
 
     # package
     'rest_framework',
-     'django_filters',
+    'django_filters',
     'corsheaders',
     'drf_spectacular',
     'rest_framework_simplejwt',
     'djoser',
+    "phonenumber_field",
 
     # apps
     'api',
-    'common'
+    'common',
+    'breaks',
+    'users',
 
 ]
 
@@ -99,7 +102,6 @@ LANGUAGE_CODE = 'ru-RU'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
-
 
 ######################
 # STATIC AND MEDIA
@@ -179,7 +181,7 @@ SIMPLE_JWT = {
 ######################
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Call Helper',
-        'DESCRIPTION': 'Call Helper',
+    'DESCRIPTION': 'Call Helper',
     'VERSION': '1.0.0',
 
     'SERVE_PERMISSIONS': [
@@ -208,3 +210,9 @@ SPECTACULAR_SETTINGS = {
     'ENABLE_DJANGO_DEPLOY_CHECK': False,
     'DISABLE_ERRORS_AND_WARNINGS': True,
 }
+
+#######################
+# Custom User
+#######################
+AUTH_USER_MODEL = 'users.User'
+AUTHENTICATION_BACKENDS = ('users.backends.AuthBackend', )

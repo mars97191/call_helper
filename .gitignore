@@ -160,3 +160,6 @@ media/
 /media/
 */media/
 /api/migrations/
+/breaks/migrations/
+/common/migrations/
+/users/migrations/
